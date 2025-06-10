@@ -22,5 +22,6 @@
     <tabs>standard-AssessmentTaskDefinition</tabs>
     <tabs>standard-VehicleInventory</tabs>
     <tabs>standard-RetailSetupAssistant</tabs>
+    <tabs>Dossier__c</tabs>
     <uiType>Lightning</uiType>
 </CustomApplication>
