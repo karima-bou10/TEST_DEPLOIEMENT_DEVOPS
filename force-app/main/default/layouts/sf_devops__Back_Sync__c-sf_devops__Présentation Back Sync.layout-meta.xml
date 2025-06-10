@@ -8,6 +8,22 @@
         <layoutColumns>
             <layoutItems>
                 <behavior>Required</behavior>
+                <field>sf_devops__Deployment_Result__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Required</behavior>
+                <field>sf_devops__Destination_Environment__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Required</behavior>
+                <field>sf_devops__Source_Pipeline_Stage__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Required</behavior>
+                <field>sf_devops__Start_Revision_Counter__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Required</behavior>
                 <field>Name</field>
             </layoutItems>
         </layoutColumns>
@@ -47,6 +63,12 @@
         <layoutColumns/>
         <style>CustomLinks</style>
     </layoutSections>
+    <miniLayout>
+        <fields>sf_devops__Deployment_Result__c</fields>
+        <fields>sf_devops__Destination_Environment__c</fields>
+        <fields>sf_devops__Source_Pipeline_Stage__c</fields>
+        <fields>sf_devops__Start_Revision_Counter__c</fields>
+    </miniLayout>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>
     <showInteractionLogPanel>false</showInteractionLogPanel>

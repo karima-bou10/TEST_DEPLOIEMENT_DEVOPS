@@ -8,6 +8,18 @@
         <layoutColumns>
             <layoutItems>
                 <behavior>Required</behavior>
+                <field>sf_devops__Status__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Required</behavior>
+                <field>sf_devops__Log_Id__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Required</behavior>
+                <field>sf_devops__Operation__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
                 <field>Name</field>
             </layoutItems>
         </layoutColumns>
@@ -47,6 +59,11 @@
         <layoutColumns/>
         <style>CustomLinks</style>
     </layoutSections>
+    <miniLayout>
+        <fields>sf_devops__Status__c</fields>
+        <fields>sf_devops__Log_Id__c</fields>
+        <fields>sf_devops__Operation__c</fields>
+    </miniLayout>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>
     <showInteractionLogPanel>false</showInteractionLogPanel>
