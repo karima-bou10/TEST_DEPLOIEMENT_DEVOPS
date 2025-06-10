@@ -18,4 +18,12 @@ public with sharing class RetrieveDossiersControllerTest {
         System.assertEquals(1, dossiers.size(),'msg');
     }
 
+    @IsTest
+    public static void testGetDossierById(){
+
+        Dossier__c doss = [SELECT Id, Name FROM Dossier__c WHERE Name = 'Dossier Test'];
+        System.debug(doss);
+        Dossier__c dossier = RetrieveDossiersController.getDossierById(doss.Id);
+        System.assertEquals(doss.Id, dossier.Id,'msg');
+    }
 }
