@@ -8,6 +8,26 @@
         <layoutColumns>
             <layoutItems>
                 <behavior>Required</behavior>
+                <field>sf_devops__Name__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Required</behavior>
+                <field>sf_devops__Parent_Remote_Reference__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Required</behavior>
+                <field>sf_devops__Remote_Reference_Date__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Required</behavior>
+                <field>sf_devops__Remote_Reference__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Required</behavior>
+                <field>sf_devops__Repository__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
                 <field>Name</field>
             </layoutItems>
         </layoutColumns>
@@ -47,6 +67,13 @@
         <layoutColumns/>
         <style>CustomLinks</style>
     </layoutSections>
+    <miniLayout>
+        <fields>sf_devops__Name__c</fields>
+        <fields>sf_devops__Parent_Remote_Reference__c</fields>
+        <fields>sf_devops__Remote_Reference_Date__c</fields>
+        <fields>sf_devops__Remote_Reference__c</fields>
+        <fields>sf_devops__Repository__c</fields>
+    </miniLayout>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>
     <showInteractionLogPanel>false</showInteractionLogPanel>
