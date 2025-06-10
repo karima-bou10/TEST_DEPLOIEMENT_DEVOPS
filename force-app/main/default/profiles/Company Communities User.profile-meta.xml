@@ -46,11 +46,6 @@
         <visible>true</visible>
     </applicationVisibilities>
     <applicationVisibilities>
-        <application>standard__LightningInstrumentation</application>
-        <default>false</default>
-        <visible>true</visible>
-    </applicationVisibilities>
-    <applicationVisibilities>
         <application>standard__LightningSales</application>
         <default>false</default>
         <visible>true</visible>
@@ -101,6 +96,11 @@
         <visible>true</visible>
     </applicationVisibilities>
     <applicationVisibilities>
+        <application>standard__SalesCloudMobile</application>
+        <default>false</default>
+        <visible>true</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
         <application>standard__SalesforceCMS</application>
         <default>false</default>
         <visible>true</visible>
@@ -120,11 +120,32 @@
         <default>false</default>
         <visible>true</visible>
     </applicationVisibilities>
+    <classAccesses>
+        <apexClass>FetchAccountsClass</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>FetchAccountsClassTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>RetrieveDossiersController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>RetrieveDossiersControllerTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
     <custom>false</custom>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
+        <field>Dossier__c.Compte__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Projet__c.Numero_du_projet__c</field>
-        <readable>false</readable>
+        <readable>true</readable>
     </fieldPermissions>
     <layoutAssignments>
         <layout>Account-Présentation du compte</layout>
@@ -310,6 +331,9 @@
         <layout>DocumentType-Document Type Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Dossier__c-Présentation Dossier</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>DuplicateRecordSet-Duplicate Record Set Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -350,6 +374,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Idea-Présentation de l%27idée</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Incident-Présentation Incident</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Individual-Individual Layout</layout>
@@ -502,9 +529,6 @@
         <layout>User-Présentation de l%27utilisateur</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>UserAlt-Présentation Profil de l%27utilisateur</layout>
-    </layoutAssignments>
-    <layoutAssignments>
         <layout>UserProvAccount-User Provisioning Account Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -557,69 +581,6 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>WorkThanks-Thanks Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>sf_devops__App_Config__mdt-sf_devops__Présentation App Config</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>sf_devops__Async_Operation_Result__c-sf_devops__Présentation Async Operation Result</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>sf_devops__Back_Sync__c-sf_devops__Présentation Back Sync</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>sf_devops__Branch__c-sf_devops__Présentation Branch</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>sf_devops__Change_Bundle_Install__c-sf_devops__Présentation Change Bundle Install</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>sf_devops__Change_Bundle__c-sf_devops__Présentation Change Bundle</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>sf_devops__Change_Submission__c-sf_devops__Présentation Change Submission</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>sf_devops__Deploy_Component__c-sf_devops__Présentation Deploy Component</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>sf_devops__Deployment_Result__c-sf_devops__Présentation Deployment Result</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>sf_devops__Environment__c-sf_devops__Présentation Environment</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>sf_devops__Hidden_Remote_Change__c-sf_devops__Présentation Hidden Remote Change</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>sf_devops__Merge_Result__c-sf_devops__Présentation Merge Result</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>sf_devops__Object_Activity__c-sf_devops__Présentation Object Activity</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>sf_devops__Pipeline_Stage__c-sf_devops__Présentation Pipeline Stage</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>sf_devops__Pipeline__c-sf_devops__Présentation Pipeline</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>sf_devops__Remote_Change__c-sf_devops__Présentation Remote Change</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>sf_devops__Service__mdt-sf_devops__Présentation Service</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>sf_devops__Source_Member_Reference__c-sf_devops__Présentation Source Member Reference</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>sf_devops__Submit_Component__c-sf_devops__Présentation Submit Component</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>sf_devops__Version__mdt-sf_devops__Présentation Version</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>sf_devops__Work_Item_Promote__c-sf_devops__Présentation Work Item Promote</layout>
     </layoutAssignments>
     <userLicense>Company Communities</userLicense>
     <userPermissions>

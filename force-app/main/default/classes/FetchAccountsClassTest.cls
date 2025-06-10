@@ -7,6 +7,6 @@ public with sharing class FetchAccountsClassTest {
         Account accnt = new Account(Name='Nokri');
         Insert accnt;
 
-        FetchAccountsClass.fetchAccount('Nokri');
+        FetchAccountsClass.fetchAccountAndContacts('Nokri');
     }
 }
