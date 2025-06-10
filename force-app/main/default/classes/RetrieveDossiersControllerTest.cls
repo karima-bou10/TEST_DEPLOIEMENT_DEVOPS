@@ -5,7 +5,7 @@ public with sharing class RetrieveDossiersControllerTest {
             Account accnt = new Account(Name='Nokri');
             Insert accnt;
             
-            Dossier__c dossier = new Dossier__c(Compte__c=accnt.Id);
+            Dossier__c dossier = new Dossier__c(Name = 'Dossier Test', Compte__c=accnt.Id);
 
             Insert dossier;
     }     
@@ -21,7 +21,7 @@ public with sharing class RetrieveDossiersControllerTest {
     @IsTest
     public static void testGetDossierById(){
 
-        Dossier__c doss = [SELECT Id, Name FROM Dossier__c WHERE Name = 'Dossier Test'];
+        Dossier__c doss = [SELECT Id, Name FROM Dossier__c WHERE Name = 'Dossier Test' LIMIT 1];
         System.debug(doss);
         Dossier__c dossier = RetrieveDossiersController.getDossierById(doss.Id);
         System.assertEquals(doss.Id, dossier.Id,'msg');
