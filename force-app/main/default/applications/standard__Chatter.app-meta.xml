@@ -11,5 +11,6 @@
     <tabs>standard-OtherUserProfile</tabs>
     <tabs>standard-CollaborationGroup</tabs>
     <tabs>standard-File</tabs>
+    <tabs>Dossier__c</tabs>
     <uiType>Aloha</uiType>
 </CustomApplication>

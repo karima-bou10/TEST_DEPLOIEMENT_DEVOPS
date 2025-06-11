@@ -15,8 +15,12 @@
     <tabs>standard-AssessmentTaskOrder</tabs>
     <tabs>standard-RetailRexOnDesktop</tabs>
     <tabs>standard-RetailExecution</tabs>
+    <tabs>Dossier__c</tabs>
     <uiType>Lightning</uiType>
     <workspaceConfig>
+        <mappings>
+            <tab>Dossier__c</tab>
+        </mappings>
         <mappings>
             <tab>standard-ActionPlanTemplate</tab>
         </mappings>

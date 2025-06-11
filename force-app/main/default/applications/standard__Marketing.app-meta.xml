@@ -16,5 +16,6 @@
     <tabs>standard-Opportunity</tabs>
     <tabs>standard-report</tabs>
     <tabs>standard-Dashboard</tabs>
+    <tabs>Dossier__c</tabs>
     <uiType>Aloha</uiType>
 </CustomApplication>
