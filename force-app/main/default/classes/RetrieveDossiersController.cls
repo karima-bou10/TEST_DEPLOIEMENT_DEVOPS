@@ -8,6 +8,7 @@ public with sharing class RetrieveDossiersController {
     }
     public static Dossier__c getDossierById(String dossierId){
         Dossier__c dossier = [SELECT Id,Name FROM Dossier__c Where Id =: dossierId];
+        System.debug(dossier);
         return dossier;
     }
 }
