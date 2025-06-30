@@ -10,4 +10,8 @@ public with sharing class RetrieveDossiersController {
         Dossier__c dossier = [SELECT Id,Name FROM Dossier__c Where Id =: dossierId];
         return dossier;
     }
+    public static Dossier__c getDossierByName(String dossierName){
+        Dossier__c dossier = [SELECT Id,Name FROM Dossier__c Where Name =: dossierName];
+        return dossier;
+    }
 }

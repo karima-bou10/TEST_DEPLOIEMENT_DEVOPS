@@ -26,4 +26,13 @@ public with sharing class RetrieveDossiersControllerTest {
         Dossier__c dossier = RetrieveDossiersController.getDossierById(doss.Id);
         System.assertEquals(doss.Id, dossier.Id,'msg');
     }
+
+    @IsTest
+    public static void testGetDossierByName(){
+
+        //Dossier__c doss = [SELECT Id, Name FROM Dossier__c WHERE Name = 'Dossier Test' LIMIT 1];
+        System.debug(doss);
+        Dossier__c dossier = RetrieveDossiersController.getDossierByName('Dossier Test');
+        System.assertEquals('Dossier Test', dossier.Name,'msg');
+    }
 }
