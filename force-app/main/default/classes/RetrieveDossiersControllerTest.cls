@@ -31,7 +31,7 @@ public with sharing class RetrieveDossiersControllerTest {
     public static void testGetDossierByName(){
 
         //Dossier__c doss = [SELECT Id, Name FROM Dossier__c WHERE Name = 'Dossier Test' LIMIT 1];
-        System.debug(doss);
+        //System.debug(doss);
         Dossier__c dossier = RetrieveDossiersController.getDossierByName('Dossier Test');
         System.assertEquals('Dossier Test', dossier.Name,'msg');
     }
