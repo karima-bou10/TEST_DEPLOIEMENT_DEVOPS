@@ -6,19 +6,7 @@
     </types>
     <types>
         <members>*</members>
-        <name>Layout</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>CustomApplication</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>PermissionSet</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>Profile</name>
+        <name>ApexClass</name>
     </types>
     <version>63.0</version>
 </Package>
