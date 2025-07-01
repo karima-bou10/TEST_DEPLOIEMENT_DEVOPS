@@ -51,5 +51,4 @@ jobs:
           sf project deploy preview \
             --source-dir changed-sources/force-app \
             --target-org ${{ secrets.PRODUCTION_USER_NAME }} \
-            --test-level RunLocalTests \
             --ignore-conflicts
