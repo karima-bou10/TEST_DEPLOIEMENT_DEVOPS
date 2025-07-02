@@ -48,7 +48,8 @@ jobs:
 
       - name: Validate deployment (check only, no actual deploy)
         run: |
-          sf project deploy preview \
+          sf project deploy validate
             --source-dir changed-sources/force-app \
             --target-org ${{ secrets.PRODUCTION_USER_NAME }} \
             --ignore-conflicts
+            --test-level RunLocalTests
