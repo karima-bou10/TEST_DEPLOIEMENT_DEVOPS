@@ -7,6 +7,9 @@ on:
     paths:
       - 'force-app/**'
 
+permissions:
+  pull-requests: write
+
 jobs:
   validate-pr:
     name: Validate Metadata on PR
@@ -51,7 +54,6 @@ jobs:
           sf project deploy validate \
             --source-dir changed-sources/force-app \
             --target-org ${{ secrets.PRODUCTION_USER_NAME }} \
-            --ignore-conflicts \
             --test-level RunLocalTests
             
       - name: Close PR if validation fails
