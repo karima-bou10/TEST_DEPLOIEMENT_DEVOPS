@@ -48,8 +48,14 @@ jobs:
 
       - name: Validate deployment (check only, no actual deploy)
         run: |
-          sf project deploy validate
+          sf project deploy validate \
             --source-dir changed-sources/force-app \
             --target-org ${{ secrets.PRODUCTION_USER_NAME }} \
-            --ignore-conflicts
+            --ignore-conflicts \
             --test-level RunLocalTests
+            
+      - name: Close PR if validation fails
+        if: failure()
+        uses: peter-evans/close-pull@v3
+        with:
+          comment: "❌ Validation failed in Salesforce. This pull request is being closed automatically."
