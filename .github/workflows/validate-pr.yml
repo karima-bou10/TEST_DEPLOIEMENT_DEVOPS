@@ -1,0 +1,69 @@
+name: Validate Pull Request Package
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'force-app/**'
+
+permissions:
+  pull-requests: write
+
+jobs:
+  validate-pr:
+    name: Validate Metadata on PR
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install Salesforce CLI
+        run: npm install @salesforce/cli --global
+
+      - name: Install sfdx-git-delta
+        run: |
+          echo Y | sfdx plugins:install sfdx-git-delta
+          sfdx plugins
+
+      - name: Create delta package from PR
+        run: |
+          mkdir changed-sources
+          sf sgd source delta --to "HEAD" --from "HEAD~1" --output changed-sources/ --generate-delta --source force-app/
+          echo "[INFO] Delta package created"
+
+      - name: Authenticate to PRODUCTION Sandbox using JWT
+        run: |
+          echo "${{ secrets.PRODUCTION_JWT_SECRET_KEY }}" > server.key
+          sf org login jwt \
+            --username ${{ secrets.PRODUCTION_USER_NAME }} \
+            --jwt-key-file server.key \
+            --client-id ${{ secrets.PRODUCTION_CONSUMER_KEY }} \
+            --instance-url ${{ vars.PRODUCTION_INSTANCE_URL }} \
+            --set-default
+
+      - name: Validate deployment (check only, no actual deploy)
+        run: |
+          sf project deploy validate \
+            --source-dir changed-sources/force-app \
+            --target-org ${{ secrets.PRODUCTION_USER_NAME }} \
+            --test-level RunLocalTests
+            
+      - name: Close PR if validation fails
+        if: failure()
+        uses: peter-evans/close-pull@v3
+        with:
+          comment: "❌ Validation failed in Salesforce. This pull request is being closed automatically."
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Notify success
+        if: success()
+        run: echo "✅ Validation successful. No issues found in the pull request."
+        
