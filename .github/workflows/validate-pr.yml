@@ -7,17 +7,19 @@ on:
     paths:
       - 'force-app/**'
 
-permissions:
-  pull-requests: write
-
 jobs:
   validate-pr:
     name: Validate Metadata on PR
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: read
+      pull-requests: write
+
     steps:
       - uses: actions/checkout@v3
         with:
+          token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 2
 
       - name: Setup Node.js
