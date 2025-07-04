@@ -61,8 +61,7 @@ jobs:
         uses: peter-evans/close-pull@v3
         with:
           comment: "❌ Validation failed in Salesforce. This pull request is being closed automatically."
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        
       - name: Notify success
         if: success()
         run: echo "✅ Validation successful. No issues found in the pull request."
