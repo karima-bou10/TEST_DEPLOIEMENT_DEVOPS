@@ -7,6 +7,9 @@ on:
     paths:
       - 'force-app/**'
 
+permissions:
+  pull-requests: write
+
 jobs:
   validate-pr:
     name: Validate Metadata on PR
@@ -48,8 +51,18 @@ jobs:
 
       - name: Validate deployment (check only, no actual deploy)
         run: |
-          sf project deploy preview \
+          sf project deploy validate \
             --source-dir changed-sources/force-app \
             --target-org ${{ secrets.PRODUCTION_USER_NAME }} \
-            --test-level RunLocalTests \
-            --ignore-conflicts
+            --test-level RunLocalTests
+            
+      - name: Close PR if validation fails
+        if: failure()
+        uses: peter-evans/close-pull@v3
+        with:
+          comment: "❌ Validation failed in Salesforce. This pull request is being closed automatically."
+          
+      - name: Notify success
+        if: success()
+        run: echo "✅ Validation successful. No issues found in the pull request."
+        
